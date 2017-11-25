@@ -1,0 +1,4 @@
+FROM python:3.6.3-stretch
+WORKDIR /examples
+COPY . /examples
+CMD ["python", "./examples.py"]

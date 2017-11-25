@@ -1,0 +1,12 @@
+node_modules
+tmp
+taitoflag_*
+.DS_Store
+.vscode
+build
+template-tmp
+*.log
+*.log.*
+*.tmp
+*.pyc
+*~

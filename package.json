@@ -1,0 +1,88 @@
+{
+  "name": "tool-template",
+  "description": "",
+  "private": false,
+  "scripts": {
+    "lint": "echo TODO: lint code in package.json",
+    "ci-test-unit": "echo TODO: implement unit tests in package.json",
+    "ci-docs": "echo TODO: generate docs in package.json",
+
+    "precommit":
+      "echo 'NOTE: Running precommit inside taito container for security reasons'; taito precommit",
+    "prepush":
+      "echo 'NOTE: Running prepush inside taito container for security reasons'; taito prepush",
+    "taito-precommit": "npm run lint",
+    "taito-prepush": "npm-run-all --parallel lint ci-test-unit",
+    "commit": "echo 'Warning: Running commitizen locally'; git-cz",
+    "commitmsg":
+      "echo 'Warning: Running validate-commit-msg locally'; validate-commit-msg",
+    "contacts-development":
+      "cat README.md | sed -n -e '/^## Development.*$/,/^#.*$/{ /^## Development.*$/d; /^#.*$/d; p; }'",
+    "contacts-maintenance":
+      "cat README.md | sed -n -e '/^## Maintenance.*$/,/^#.*$/{ /^## Maintenance.*$/d; /^#.*$/d; p; }'",
+    "ci-scan": "npm run lint",
+    "ci-release-pre:prod": "semantic-release pre",
+    "ci-release-post:prod": "semantic-release post"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "wip",
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "build",
+        "ci",
+        "chore",
+        "revert"
+      ],
+      "scope": {
+        "required": false,
+        "allowed": ["*"],
+        "validate": false,
+        "multiple": false
+      },
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "subject does not match subject pattern!",
+      "helpMessage": "",
+      "autoFix": false
+    }
+  },
+  "release": {
+    "getLastRelease": "last-release-git",
+    "debug": false,
+    "verifyConditions": {
+      "path": "./node_modules/semantic-release/src/lib/plugin-noop.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:TaitoUnited/tool-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TaitoUnited/tool-template/issues"
+  },
+  "keywords": ["orig-template", "tool-template", "customername"],
+  "author": "Taito United <support@taitounited.fi>",
+  "license": "MIT",
+  "homepage": "https://github.com/TaitoUnited/tool-template#readme",
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "husky": "^0.14.3",
+    "last-release-git": "0.0.3",
+    "npm-run-all": "^4.0.2",
+    "prettier": "^1.8.1",
+    "semantic-release": "^8.1.2",
+    "validate-commit-msg": "^2.14.0"
+  }
+}

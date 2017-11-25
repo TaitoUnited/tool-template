@@ -1,0 +1,14 @@
+tool-template-examples:
+  container_name: tool-template-examples
+  build: ./examples
+  dockerfile: Dockerfile.build
+  volumes:
+    - "./src:/src"
+    - "./examples:/examples"
+
+tool-template-src:
+  container_name: tool-template-src
+  build: ./src
+  dockerfile: Dockerfile.build
+  volumes:
+    - "./src:/src"

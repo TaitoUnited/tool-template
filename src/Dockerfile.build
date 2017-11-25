@@ -1,0 +1,5 @@
+FROM python:3.6.3-stretch
+RUN pip install requests simplejson
+WORKDIR /src
+COPY . /src
+CMD ["python", "./main.py"]
