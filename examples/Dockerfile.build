@@ -1,4 +1,5 @@
 FROM python:3.6.3-stretch
-WORKDIR /examples
-COPY . /examples
-CMD ["python", "./examples.py"]
+WORKDIR /src
+COPY . /src
+RUN pip install -r requirements.txt
+CMD ["python", "./main.py"]
