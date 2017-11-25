@@ -5,8 +5,8 @@
 ## Prerequisites
 
 * [taito-cli](https://github.com/TaitoUnited/taito-cli#readme)
-* [docker](https://docs.docker.com/compose/install/) (>= 1.11)
-* Linter for your editor
+* [docker-compose](https://docs.docker.com/compose/install/) (>= 1.11)
+* Linter plugins for your code editor
 
 ## Conventions and tips
 
