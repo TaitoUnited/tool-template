@@ -1,7 +1,9 @@
+# TODO use multi-stage build instead of separate files
 FROM python:3.6.3-stretch
 WORKDIR /build
 COPY . /build
 WORKDIR /build/src
-RUN pip install pipenv
-RUN pipenv install --system
+# RUN npm install --production
+RUN pip install pipenv && \
+    pipenv install --system
 CMD python ./main.py
