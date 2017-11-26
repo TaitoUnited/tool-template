@@ -1,5 +1,5 @@
 node_modules
-site-packages
+__pycache__
 tmp
 taitoflag_*
 .DS_Store

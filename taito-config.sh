@@ -3,7 +3,7 @@
 # Taito-cli settings
 export taito_image="taitounited/taito-cli:latest"
 export taito_extensions=""
-export taito_plugins="docker npm"
+export taito_plugins="docker npm pipenv"
 
 # Common project settings for all plugins
 export taito_organization="taitounited"
@@ -14,8 +14,7 @@ export taito_customer="customername"
 export taito_project="tool-template"
 
 # Docker
-# NOTE: use docker-compose run instead of up because stdin_open/tty do not work
-export docker_run="tool-template-src"
+export docker_run="tool-template-main"
 
 # For cloudbuild
 export gcloud_zone="europe-west1-c"

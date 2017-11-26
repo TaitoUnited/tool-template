@@ -1,5 +1,7 @@
 > Create a new project from this template by running `taito template create: tool-template`.
 
+> TIP: If you don't need docker, you can add a `start` script to your package.json, and remove the docker files, build/push steps (cloudbuild.yaml) and the docker plugin configuration (taito-config.sh).
+
 # tool-template
 
 ## Prerequisites
@@ -16,25 +18,25 @@
 
 ## Development
 
-Install linters locally (all developers use the same linter version):
+Install libraries on host for linting, autocompletion and commit validation purposes:
 
     $ taito install
 
-Start the tool:
+Init shell environment before starting your editor:
 
-    $ taito start
+    $ taito env
+
+Run the tool:
+
+    $ taito start [-- ARGS]
 
 Run the examples:
 
-    $ taito start: examples
+    $ taito start: examples [-- ARGS]
 
-Start a shell on the tool container:
+Start a shell in the tool container:
 
     $ taito shell
-
-Start a shell on the examples container:
-
-    $ taito shell: examples
 
 Write `taito op` and press TAB to get the list of most important commands for operating your project. Run `taito COMMAND -h` to search for a command (e.g `taito log -h`, `taito clean -h`). Run `taito -h` to get detailed instructions for all commands. For troubleshooting run `taito --trouble`.
 

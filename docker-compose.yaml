@@ -1,14 +1,21 @@
-tool-template-examples:
-  container_name: tool-template-examples
-  build: ./examples
-  dockerfile: Dockerfile.build
+tool-template-main:
+  container_name: tool-template-main
+  build: .
   volumes:
-    - "./src:/src"
-    - "./examples:/examples"
+    - "./src:/build/src"
 
-tool-template-src:
-  container_name: tool-template-src
-  build: ./src
-  dockerfile: Dockerfile.build
+tool-template-tests:
+  container_name: tool-template-main
+  build: .
   volumes:
-    - "./src:/src"
+    - "./src:/build/src"
+    - "./test:/build/test"
+  command: python /build/test/test.py
+
+tool-template-examples:
+  container_name: tool-template-main
+  build: .
+  volumes:
+    - "./src:/build/src"
+    - "./examples:/build/examples"
+  command: python /build/test/examples.py

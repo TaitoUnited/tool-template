@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "echo TODO: lint code in package.json",
     "ci-test-unit": "echo TODO: implement unit tests in package.json",
+    "ci-test-int": "taito start: tests",
     "ci-docs": "echo TODO: generate docs in package.json",
 
     "precommit":

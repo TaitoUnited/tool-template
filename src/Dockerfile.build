@@ -1,5 +1,0 @@
-FROM python:3.6.3-stretch
-WORKDIR /src
-COPY . /src
-RUN pip install -r requirements.txt
-CMD ["python", "./main.py"]
